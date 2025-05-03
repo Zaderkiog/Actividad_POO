@@ -1,6 +1,11 @@
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
+
+class Nomina {
+ vector<Empleado> Empleados;
+};
 
 class Fecha {
 
