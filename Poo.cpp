@@ -12,7 +12,9 @@ class Nomina {
  vector<Empleado*> Empleados;
  Organizacion* organizacion;
  public:
- // & : Es alias o otro nombre para una variable existente.
+
+ /* & : El parametro de _empleados es una referencia constante a un vector de punteros a Empleado
+  Evita copiar el vector y garantiza que no se modificara dentro del constructor*/
  Nomina(const vector<Empleado*> &_empleados, Organizacion* _origanizacion): Empleados(_empleados), organizacion(_origanizacion) {}
 };
 
