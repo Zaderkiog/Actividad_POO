@@ -12,6 +12,7 @@ class Nomina {
  vector<Empleado*> Empleados;
  Organizacion* organizacion;
  public:
+ // & : Es alias o otro nombre para una variable existente.
  Nomina(const vector<Empleado*> &_empleados, Organizacion* _origanizacion): Empleados(_empleados), organizacion(_origanizacion) {}
 };
 
