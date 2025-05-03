@@ -12,9 +12,14 @@ class Nomina {
  vector<Empleado*> Empleados;
  Organizacion* organizacion;
  public:
-
  /* & : El parametro de _empleados es una referencia constante a un vector de punteros a Empleado
-  Evita copiar el vector y garantiza que no se modificara dentro del constructor*/
+  Evita copiar el vector y garantiza que no se modificara dentro del constructor.
+  &_empleados referencia a un espacio de memoria de X empleado (Por ejemplo Empleado("Juan"s)), el apuntador toma ese espacio de memoria referenciado
+  para evitar trabajar con una copia de empleado y asi trabajar con el espacio de memoria. Los empleados solo se
+  podran leer mas no modificar. s
+  
+  Referente al puntero de organizacion, este SI crea una copia de esa organizacon y ya no trabaja con el espacio
+  de memoria*/
  Nomina(const vector<Empleado*> &_empleados, Organizacion* _origanizacion): Empleados(_empleados), organizacion(_origanizacion) {}
 };
 
