@@ -3,12 +3,23 @@
 #include <vector>
 using namespace std;
 
+class Organizacion {
+
+};
+
 class Nomina {
- vector<Empleado> Empleados;
+ private:
+ vector<Empleado*> Empleados;
+ Organizacion* organizacion;
+ public:
+ Nomina(const vector<Empleado*> &_empleados, Organizacion* _origanizacion): Empleados(_empleados), organizacion(_origanizacion) {}
 };
 
 class Fecha {
-
+   private:
+   int dia;
+   int mes;
+   int anio;
 };
 
 class Empleado {
