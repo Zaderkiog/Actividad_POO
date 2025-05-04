@@ -142,5 +142,44 @@ class Practicante: public Empleado {
 };
 
 int main(){
+    int opc;
+
+    cout << "================================================" << endl;
+    cout << "1. Crear empleado" << endl;
+    cout << "2. Eliminar empleado" << endl;
+    cout << "3. Calcular nomina de los empleados" << endl;
+    cout << "4. Mostrar organizacion y todos los empleados" << endl;
+    cout << "5. Empleado del mes" << endl;
+    cout << "6. Empleado mas costoso" << endl;
+    cout << "=================================================" << endl;
+    cout << "Ingrese una opcion: ";
+    cin >> opc;
+
+    switch (opc)
+    {
+    case 1:
+        int opc2;
+        cout << "Ha seleccionado crear empleado" << endl;
+        cout << "Que empleado desea crear: " << endl;
+        cout << "1. Temporal" << endl;
+        cout << "2. Contratista" << endl;
+        cout << "3. Planta" << endl;
+        cout << "4. Practicante" << endl;
+        cout << "Seleccion alguna opcion: ";
+        cin >> opc2;
+         
+        switch (opc2)
+        {
+        case 1:
+            
+            break;
+        
+        default:
+            break;
+        }
+    
+    default:
+        break;
+    }
     return 0;
 }
