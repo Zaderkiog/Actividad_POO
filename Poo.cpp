@@ -19,6 +19,8 @@ class Empleado {
     virtual void MostrarInfo(){
         cout << "..." << endl;
     }
+
+    virtual ~Empleado(){}
 };
 
 class Nomina;
@@ -74,11 +76,17 @@ class Temporal: public Empleado {
    int pension;
    int liquidacion;
   public:
-  Temporal(string _nombre, int _base, int _identificacion, Fecha _fechaFinalizacion, int _salud, int _pension, int _liquidacion): Empleado(_nombre, _base, _identificacion){}
+  Temporal(string _nombre, int _base, int _identificacion, Fecha _fechaFinalizacion, int _salud, int _pension, int _liquidacion): Empleado(_nombre, _base, _identificacion){
+    this->salud = _salud;
+    this->pension = _pension;
+    this->liquidacion = _liquidacion;
+  }
 
   void CalcularSalario() override {
      cout << base + salud + pension + liquidacion << endl;
   }
+
+  void MostrarInfo() override{}
 };
 
 class Contratista: public Empleado {
@@ -90,6 +98,8 @@ class Contratista: public Empleado {
    void CalcularSalario() override {
      cout << base - salud << endl;
    }
+
+   void MostrarInfo() override{}
 };
 
 class Planta: public Empleado {
@@ -100,22 +110,35 @@ class Planta: public Empleado {
    int pension;
    int transporte;
   public:
-  Planta(string _nombre, int _base, int _identificacion, int _vaciones, int _cesantias, int _salud, int _pension, int _transporte): Empleado(_nombre, _base, _identificacion){}
+  Planta(string _nombre, int _base, int _identificacion, int _vacaciones, int _cesantias, int _salud, int _pension, int _transporte): Empleado(_nombre, _base, _identificacion){
+    // El motivo del This es asignar el valor del parametro del constructor al parametro de la clase
+    this->vacaciones = _vacaciones;
+    this->cesantias = _cesantias;
+    this->salud = _salud;
+    this->pension = _pension;
+    this->transporte = _transporte;
+  }
 
   void CalcularSalario() override {
      cout << "Total: " << cesantias + (vacaciones * (base/30)) + salud + pension + transporte << endl;
   }
+
+  void MostrarInfo() override {}
 };
 
 class Practicante: public Empleado {
    private:
       int salud;
    public:
-   Practicante(string _name, int _base, int _identificacion, int _salud): Empleado(_name, _base, _identificacion){}
+   Practicante(string _name, int _base, int _identificacion, int _salud): Empleado(_name, _base, _identificacion){
+     this->salud = _salud;
+   }
 
    void CalcularSalario() override {
      cout << "Total: " <<   base  - (base *0.1)  + salud << endl;
    }
+
+   void MostrarInfo() override {}
 };
 
 int main(){
